@@ -23,7 +23,7 @@ export default {
 
 </template>
 
-<style>
+<style lang="scss" scoped>
 .logo {
     min-height: 50px;
     display: flex;
