@@ -29,6 +29,7 @@ export default{
       .then((res => {
         //console.log(res.data.data);
         store.characterList = res.data.data;
+        store.loading = false;
       }))
       .catch((err)=>{
         console.log("Errori",err);

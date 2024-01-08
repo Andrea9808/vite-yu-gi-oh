@@ -1,5 +1,6 @@
 <script>
 import SingleCharacter from './SingleCharacter.vue'
+import AppLoader from './AppLoader.vue'
 
 //importo lo store
 import { store } from '../store';
@@ -9,6 +10,7 @@ export default {
 
     components:{
         SingleCharacter,
+        AppLoader,
     },
 
     data(){
@@ -26,11 +28,14 @@ export default {
             <div class="count">
                 <h6>Found {{store.characterList.length}} cards</h6>
             </div>
-            <div class="row">
+            <div v-if="!store.loading" class="row">
                 <div v-for="card in store.characterList" :key="card" class="col-6 col-md-4 col-lg-3">
                     <SingleCharacter :info="card"/>
                 </div>
             </div>
+
+            <!-- LOADER -->
+            <AppLoader v-else label="Yu-Gi-Oh"/>
        </div>
     </div>
 </template>
