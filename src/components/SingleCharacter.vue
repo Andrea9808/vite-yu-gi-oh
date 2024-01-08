@@ -9,18 +9,23 @@ export default{
 
 <template>
     <div class="card text-center">
-        <img :src= info.card_images[0].image_url :alt="info.name">
-        <h4>{{info.name}}</h4>
-        <div>{{info.race}}</div>
+      <img :src="info.card_images[0].image_url" :alt="info.name" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{ info.name }}</h5>
+        <div class="card-text">{{ info.archetype }}</div>
+      </div>
     </div>
-</template>
-
+  </template>
 <style lang="scss" scoped>
 
 .card{
-    background-color: orange;
-    min-height: 470px;
+    background-color: rgb(218, 146, 13);
+    min-height: 500px;
     margin: 15px 20px;
+
+    img{
+        width: 100%;
+    }
     
 }
 </style>
