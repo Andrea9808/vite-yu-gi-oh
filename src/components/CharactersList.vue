@@ -24,7 +24,7 @@ export default {
     <div class="container">
        <div class="bg">
             <div class="count">
-                <h6>Found 20 cards</h6>
+                <h6>Found {{store.characterList.length}} cards</h6>
             </div>
             <div class="row">
                 <div v-for="card in store.characterList" :key="card" class="col-6 col-md-4 col-lg-3">
@@ -36,9 +36,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+
     .bg{
         background-color: white;
-        min-height: 500px;
+       
 
         .count{
             background-color: black;
