@@ -7,7 +7,8 @@ import HeaderApp from './components/HeaderApp.vue'
 import AppSearch from './components/AppSearch.vue'
 import CharactersList from './components/CharactersList.vue'
 
-import { store } from './components/store';
+//importo lo store
+import { store } from './store';
 
 export default{
   components:{
@@ -26,7 +27,8 @@ export default{
       axios
       .get(store.apiURL)
       .then((res => {
-        console.log(res.data.data);
+        //console.log(res.data.data);
+        store.characterList = res.data.data;
       }))
       .catch((err)=>{
         console.log("Errori",err);

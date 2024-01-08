@@ -1,11 +1,22 @@
 <script>
 import SingleCharacter from './SingleCharacter.vue'
+
+//importo lo store
+import { store } from '../store';
+
 export default {
     name: 'CharactersList',
 
     components:{
         SingleCharacter,
+    },
+
+    data(){
+    return{
+      store,
     }
+  },
+
 }
 </script>
 
@@ -16,23 +27,8 @@ export default {
                 <h6>Found 20 cards</h6>
             </div>
             <div class="row">
-                <div class="col-6 col-md-4 col-lg-3">
-                    <SingleCharacter/>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <SingleCharacter/>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <SingleCharacter/>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <SingleCharacter/>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <SingleCharacter/>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <SingleCharacter/>
+                <div v-for="card in store.characterList" :key="card" class="col-6 col-md-4 col-lg-3">
+                    <SingleCharacter :info="card"/>
                 </div>
             </div>
        </div>
