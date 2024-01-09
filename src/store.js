@@ -9,5 +9,5 @@ export const store = reactive({
 
     loading: true,
     statusValue: "",
-    apiArchetypeParameter: "archetype_name",
+    // apiArchetypeParameter: "archetype",
 })

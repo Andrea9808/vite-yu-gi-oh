@@ -1,6 +1,7 @@
 <script>
 import SingleCharacter from './SingleCharacter.vue'
 import AppLoader from './AppLoader.vue'
+import ResultApp from './ResultApp.vue'
 
 //importo lo store
 import { store } from '../store';
@@ -11,6 +12,7 @@ export default {
     components:{
         SingleCharacter,
         AppLoader,
+        ResultApp,
     },
 
     data(){
@@ -26,7 +28,7 @@ export default {
     <div class="container">
        <div class="bg">
             <div class="count">
-                <h6>Found {{store.characterList.length}} cards</h6>
+                <ResultApp/>
             </div>
             <div v-if="!store.loading" class="row">
                 <div v-for="card in store.characterList" :key="card" class="col-6 col-md-4 col-lg-3">

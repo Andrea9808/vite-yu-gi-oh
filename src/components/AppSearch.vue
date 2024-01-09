@@ -16,9 +16,9 @@ export default {
 
 <template>
     <div class="container">
-        <select class="selection" name="" id="" v-model="store.statusValue">
+        <select class="selection" name="selezione_archetipo" id="" v-model="store.statusValue" @change="$emit('archetypeChanged')">
             <option value="" selected>: Select Archetype :</option>
-            <option v-for="option in store.optionList" :key="option" value=" ">{{option.archetype_name}}</option>
+            <option v-for="option in store.optionList" :key="option" :value="option.archetype_name">{{option.archetype_name}}</option>
         </select>
     </div>
 </template>
