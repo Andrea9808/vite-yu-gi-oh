@@ -22,6 +22,8 @@ export default{
       store,
     }
   },
+
+  // richiesta personaggi/figurine
   methods: {
     getCharacters(){
       axios
@@ -34,10 +36,35 @@ export default{
       .catch((err)=>{
         console.log("Errori",err);
       })
+    },
+
+    // richiesta opzioni
+    getOptions(){
+
+      let myUrl = store.optionApiUrl;
+
+      // se l'utente ha fatto una ricerca
+      if (store.statusValue !== ""){
+        myUrl += `${store.apiArchetypeParameter}=${store.statusValue}`
+      }
+
+      axios
+      .get(store.optionApiUrl)
+      .then((res => {
+        //console.log(res.data);
+        store.optionList = res.data;
+      }))
+      .catch((err)=>{
+        console.log("Errori",err);
+      })
     }
   },
+
+
+
   created(){
     this.getCharacters();
+    this.getOptions();
   }
 }
 </script>

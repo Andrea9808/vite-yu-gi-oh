@@ -1,16 +1,24 @@
 <script>
+// importo store
+import { store } from '../store';
+
 export default {
     name: 'AppSearch',
+
+    data(){
+        return{
+            store,
+        }
+    },
 }
+
 </script>
 
 <template>
     <div class="container">
-        <select class="selection" name="Opzione" id="1">
-            <option value="opzione 1">Alien</option>
-            <option value="opzione 1">opzione 2</option>
-            <option value="opzione 1">opzione 3</option>
-            <option value="opzione 1">opzione 4</option>
+        <select class="selection" name="" id="" v-model="store.statusValue">
+            <option value="" selected>: Select Archetype :</option>
+            <option v-for="option in store.optionList" :key="option" value=" ">{{option.archetype_name}}</option>
         </select>
     </div>
 </template>

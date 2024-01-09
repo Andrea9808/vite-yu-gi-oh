@@ -9,7 +9,7 @@ export default{
 
 <template>
     <div class="card text-center">
-      <img :src="info.card_images[0].image_url" :alt="info.name" class="card-img-top">
+      <img :src="info.card_images[0].image_url" :alt="info.name" >
       <div class="card-body">
         <h5 class="card-title">{{ info.name }}</h5>
         <div class="card-text">{{ info.archetype }}</div>
@@ -26,6 +26,5 @@ export default{
     img{
         width: 100%;
     }
-    
 }
 </style>
