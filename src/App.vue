@@ -34,7 +34,7 @@ export default {
       if (store.statusValue !== "") {
 
         //console.log("Selected Archetype:", store.statusValue);
-        myUrl += `archetype=${store.statusValue}`
+        myUrl += `&archetype=${store.statusValue}`
 
       }
       //console.log('triggerato', store.statusValue);
